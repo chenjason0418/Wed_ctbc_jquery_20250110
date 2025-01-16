@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif TC", 微軟正黑體;
+}
+
+.slider-container{
+    width: 100%;
+    height: 100vh;
+    background: lightskyblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 所有相片 */
+.slider-imgs{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* 相片div */
+.slider{
+    width: 100px;
+    height: 500px;
+    cursor: pointer;
+    transition: 0.6s;
+    /* 父元素添加相對定位 */
+    position: relative;
+}
+
+/* 相片 */
+.slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 選取第一張與最後一張相片 */
+/* .slider-imgs .slider:first-child */
+/* 選取 .slider-imgs下第一個.slider元素 */
+.slider-imgs .slider:first-child, .slider-imgs .slider:last-child{
+    height: 400px;
+}
+/* 選取指定相片 */
+/* .slider-imgs .slider:nth-child(2) */
+/* 選取.slider-imgs 下第二個.slider元素 */
+.slider-imgs .slider:nth-child(2), .slider-imgs .slider:nth-child(4){
+    height: 450px;
+}
+
+.slider h1 {
+    font-size: 28px;
+    color: white;
+    /* 子元素使用絕對定位 */
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+
+.slider.active{
+    width: 450px !important;
+}
+
+.slider.active h1{
+    display: none;
+}
